@@ -18,16 +18,16 @@ yes | pacman -S -q lightdm-gtk-greeter-settings
 
 echo "########### INSTALLING KDE-PLASMA ###########"
 #plasma install
-yes | pacman -S -q --needed ssdm
+yes | pacman -S -q --needed sddm
 yes | pacman -S -q --needed plasma
 #changing settings
 mv /usr/lib/sddm/sddm.conf.d/default.conf /usr/lib/sddm/sddm/sddm.conf.d/default.conf.old
 cp ./default.conf /usr/lib/sddm/sddm.conf.d/default.conf
 
 echo "########### ENABLING SERVICES ###########"
-#enable lightdm and ssdm
+#enable lightdm and sddm
 systemctl enable lightdm
-systemctl enable ssdm
+systemctl enable sddm
 
 echo "########### COMPLETED ###########"
 echo ""
